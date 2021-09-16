@@ -89,8 +89,8 @@ button {
 
 // Section
 .session-wrapper{
-  padding-top:64px;
-  padding-bottom:64px;
+  padding-top:80px;
+  padding-bottom:80px;
 }
 
 .invisible{
@@ -99,8 +99,8 @@ button {
 
 @media screen and (max-width: 575.98px) {
   .session-wrapper {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    // padding-top: 48px;
+    // padding-bottom: 48px;
     h1 {
       font-size: 24px !important;
     }

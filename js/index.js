@@ -260,7 +260,8 @@ $(document).ready(function () {
   function isScrolledIntoView(elem) {
     var pageTop = $(window).scrollTop();
     var pageBottom = pageTop + $(window).height();
-    var elementTop = $(elem).offset().top - headerHeight + 5;
+    // var elementTop = $(elem).offset().top - headerHeight + 5;
+    var elementTop = $(elem).offset().top;
     var elementBottom = elementTop + $(elem).height();
 
     if ($(elem).height() < $(window).height()) {
@@ -272,7 +273,10 @@ $(document).ready(function () {
 
   function handleToogleCollapseNavMobile() {
     $(".navbar-collapse a").click(function () {
-      $(".navbar-collapse").collapse("hide");
+      setTimeout(function(){
+        $(".navbar-collapse").collapse("hide");
+      },700);
+      // $(".navbar-collapse").collapse("hide");
     });
   }
   //for header
@@ -290,26 +294,26 @@ $(document).ready(function () {
   function handleClickNavItem() {
     var listNavItem = $("#header nav .nav-item");
 
-    $(listNavItem).each(function (index, item) {
-      $(item).click(function () {
-        switch (index) {
-          case 0:
-            setTimeout(function(){window.scrollTo(0,$(chartWrapper).position().top - headerHeight)},200);
-            return;
-          case 1:
-            setTimeout(function(){window.scrollTo(0,$(quyenLoiWrapper).position().top - headerHeight)},200);
-            return;
-          case 2:
-            setTimeout(function(){window.scrollTo(0,$(huongDanWrapper).position().top - headerHeight)},200);
-            return;
-          case 3:
-            setTimeout(function(){window.scrollTo(0,$(taiSaoWrapper).position().top - headerHeight)},200);
-            return;
-          default:
-            setTimeout(function(){window.scrollTo(0,0)},200);
-        }
-      });
-    });
+    // $(listNavItem).each(function (index, item) {
+    //   $(item).click(function () {
+    //     switch (index) {
+    //       case 0:
+    //         setTimeout(function(){window.scrollTo(0,$(chartWrapper).position().top - headerHeight)},200);
+    //         return;
+    //       case 1:
+    //         setTimeout(function(){window.scrollTo(0,$(quyenLoiWrapper).position().top - headerHeight)},200);
+    //         return;
+    //       case 2:
+    //         setTimeout(function(){window.scrollTo(0,$(huongDanWrapper).position().top - headerHeight)},200);
+    //         return;
+    //       case 3:
+    //         setTimeout(function(){window.scrollTo(0,$(taiSaoWrapper).position().top - headerHeight)},200);
+    //         return;
+    //       default:
+    //         setTimeout(function(){window.scrollTo(0,0)},200);
+    //     }
+    //   });
+    // });
   }
 
   checkMobile();
