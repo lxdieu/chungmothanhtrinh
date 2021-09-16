@@ -1,0 +1,108 @@
+@import "colors.scss";
+:root {
+  --animate-delay: 0.5s;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SfProDisplay", "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+    }
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.4rem;
+}
+h4 {
+  font-size: 2rem;
+  line-height: 3.2rem;
+  font-weight: 600;
+}
+h5 {
+  font-size: 1.8rem;
+}
+p {
+  font-size: 1.6rem;
+}
+a {
+  font-size: 1.6rem;
+  color: $mn50;
+  text-decoration: none;
+  &:hover {
+    color: $p100;
+    text-decoration: none;
+  }
+}
+span {
+  font-size: 1.2rem;
+}
+button {
+  font-size: 1.6rem;
+}
+
+// button
+.btn {
+  font-size: 1.6rem;
+  color: #fff;
+  padding:8px 16px;
+  &.primary {
+    background: $p100;
+    &:hover {
+      color: #fff;
+      background: $sb60;
+    }
+  }
+  &.small{
+    padding:4px 8px;
+    font-size:14px;
+  }
+}
+
+//typography
+
+.primary-text {
+  color: $dn10;
+}
+.secondary-text {
+  color: $mn50;
+}
+
+
+// Section
+.session-wrapper{
+  padding-top:64px;
+  padding-bottom:64px;
+}
+
+.invisible{
+  opacity:0;
+}
+
+@media screen and (max-width: 575.98px) {
+  .session-wrapper {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    h1 {
+      font-size: 24px !important;
+    }
+  }
+}
