@@ -26,6 +26,7 @@ $(document).ready(function () {
   var quyenLoiWrapper = $("#quyen-loi");
   var huongDanWrapper = $("#huong-dan");
   var taiSaoWrapper = $("#tai-sao");
+  const headerHeight = $('.header-wrapper').first().height();
 
   $("body").tooltip({ selector: "[data-toggle=tooltip]" });
 
@@ -259,9 +260,9 @@ $(document).ready(function () {
   function isScrolledIntoView(elem) {
     var pageTop = $(window).scrollTop();
     var pageBottom = pageTop + $(window).height();
-
-    var elementTop = $(elem).offset().top;
+    var elementTop = $(elem).offset().top - headerHeight + 5;
     var elementBottom = elementTop + $(elem).height();
+
     if ($(elem).height() < $(window).height()) {
       return pageTop <= elementTop && pageBottom >= elementBottom;
     } else {
@@ -288,11 +289,9 @@ $(document).ready(function () {
 
   function handleClickNavItem() {
     var listNavItem = $("#header nav .nav-item");
-    const headerHeight = $('.header-wrapper').first().height();
 
     $(listNavItem).each(function (index, item) {
       $(item).click(function () {
-        console.log(headerHeight);
         switch (index) {
           case 0:
             setTimeout(function(){window.scrollTo(0,$(chartWrapper).position().top - headerHeight)},200);
